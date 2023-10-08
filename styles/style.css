@@ -1,5 +1,365 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: var(--background-color);
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  min-height: 100svh;
+  padding: 10px;
+  color: var(--accent-text-color);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  align-self: flex-end;
+  width: 25px;
+  height: 25px;
+  margin: 0 0 10px 10px;
+  border-inline-start: 1px solid var(--accent-text-color);
+  border-block-end: 1px solid var(--accent-text-color);
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  justify-self: end;
+  margin: 10px 10px 0 0;
+  border-inline-end: 1px solid var(--accent-text-color);
+  border-block-start: 1px solid var(--accent-text-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 9px 19px 0 0;
+  color: var(--rec-color);
+  text-transform: uppercase;
+}
+
+.decorated-element::after {
+  content: '';
+  border-radius: 50%;
+  background-color: var(--rec-color);
+  filter: drop-shadow(0 0 4px var(--rec-color));
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 1.5px 13px;
+  color: var(--accent-text-color);
+  line-height: 18px; /* 100% */
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-text-color);
+  outline: none;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-text-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button_active:hover {
+  outline: none;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: var(--title-font-size);
+  font-style: normal;
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
+}
+
+.header__text {
+  justify-self: end;
+  align-self: center;
+  color: var(--primary-text);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: var(--main-text-bg);
+  max-inline-size: 355px;
+}
+
+.accent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accent-list-title {
+  margin: 0 0 10px;
+  color: var(--primary-text);
+  font-weight: 700;
+  line-height: 23.4px;
+  background-color: var(--main-text-bg);
+}
+
+.accent-list-text {
+  color: var(--main-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px;
+}
+
+.accent-link {
+  text-shadow: 2px 1px 0 #ff0070;
+}
+
+/* WHY */
+
+.main {
+  padding: 40px 10px;
+}
+
+.what__title {
+  margin: 50px 0 20px;
+}
+
+.how__title {
+  margin: 50px 0 20px;
+}
+
+.how__heading {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.how__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.how__list-title {
+  margin: 0 0 10px;
+  color: var(--primary-text);
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px; /* 130% */
+  background-color: var(--main-text-bg);
+}
+
+.gallery__title {
+  font-size: 18px;
+}
+
+.gallery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery__list-image {
+  display: block;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  display: grid;
+  place-content: center;
+  min-height: 100svh;
+  padding: 10px;
+}
+
+.footer__text {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: var(--title-font-size);
+  text-shadow: 2px 2px 0 var(--title-shadow-color);
+}
+
+@media (min-width: 748px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .decorated-element {
+    margin: 20px 29px 0 0;
+  }
+
+  .decorated-zone::before {
+    margin: 20px 20px 0 0;
+  }
+
+  .decorated-zone::after {
+    margin: 0 0 20px 20px;
+  }
+
+  .header__title {
+    margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    max-inline-size: 364px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .accent-section {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    gap: 20px;
+  }
+
+  .what {
+    display: grid;
+    gap: 20px;
+  }
+
+  .why__title {
+    max-width: 236px;
+  }
+
+  .what__tilte {
+    margin: 0;
+  }
+
+  .what__list {
+    min-width: 100%;
+  }
+
+  .h2-title {
+    max-width: 236px;
+    margin: 0;
+  }
+
+  .gallery__title {
+    margin: 0 0 20px;
+  }
+
+  .gallery__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery__list-item:first-of-type {
+    grid-column: span 2;
+  }
+
+  .gallery__list-item:nth-of-type(2) {
+    grid-row: span 2;
+  }
+
+  .gallery__list-item:nth-of-type(3) {
+    grid-row: span 2;
+  }
+
+  .gallery__list-item:nth-of-type(5) {
+    grid-column: span 2;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer__text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* 1024 */
+
+@media (min-width: 1024px) {
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: baseline;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__text {
+    max-width: 491px;
+  }
+
+  .accent-section {
+    grid-template-columns: 315px 649px;
+  }
+
+  .what {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+
+  .what__title {
+    grid-column: span 2;
+    max-width: 315px;
+  }
+
+  .what__list {
+    flex-direction: row;
+    grid-column: span 2;
+  }
+
+  .what__list-item {
+    max-width: 315px;
+  }
+
+  .h2-title {
+    max-width: 315px;
+  }
 }
