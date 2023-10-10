@@ -7,10 +7,10 @@
 }
 
 body {
+  margin: 0 auto;
+  font-family: var(--accent-font), monospace;
   min-inline-size: 375px;
   max-inline-size: 1440px;
-  margin: 0 auto;
-  font-family: var(--accent-font);
 }
 
 h1,
@@ -37,16 +37,20 @@ picture {
 
 button,
 a {
-  cursor: pointer;
-  color: currentColor;
-  font-family: inherit;
+  color: var(--main-text-color);
+  font-family: inherit, monospace;
   font-size: inherit;
   line-height: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:focus {
   border: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--main-text-color);
 }
 
 a:hover {
@@ -54,11 +58,11 @@ a:hover {
 }
 
 .h2-title {
-  background-color: transparent;
   margin: 0 0 20px;
   color: var(--accent-text-color);
-  font-family: var(--accent-font);
-  font-style: normal;
+  font-family: var(--accent-font), monospace;
   font-weight: 700;
+  font-style: normal;
   line-height: 23.4px; /* 130% */
+  background-color: transparent;
 }
