@@ -113,7 +113,7 @@
   font-size: var(--title-font-size);
   font-style: normal;
   line-height: 82.5%; /* 95.7px */
-  text-shadow: 4px 4px 0 #ff8dcb;
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
 }
 
 .header__text {
@@ -214,10 +214,8 @@
   color: var(--title-color);
   font-weight: 700;
   font-size: var(--title-font-size);
-  text-shadow: 4px 4px 0 #ff8dcb;
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
 }
-
-/* @media (min-width: 748px) { */
 
 @media (min-width: 768px) {
 
@@ -362,6 +360,6 @@
   }
 
   .footer__text {
-    text-shadow: 2px 2px 0 var(--title-shadow-color);
+    text-shadow: 3px 2px 0 var(--title-shadow-color);
   }
 }
